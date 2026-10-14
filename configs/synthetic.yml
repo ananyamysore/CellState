@@ -1,0 +1,36 @@
+# Small synthetic configuration. For real datasets choose QC limits based on tissue,
+# chemistry, sample handling, and diagnostic plots before analysis.
+dataset_key: dataset_id
+sample_key: sample_id
+donor_key: donor_id
+condition_key: condition
+batch_key: batch
+cell_type_key: cell_type
+seed: 123
+output_dir: cellstate-results
+qc:
+  min_genes: 0
+  min_counts: 0
+  max_mito_percent: 100
+  mito_prefixes: ["MT-", "mt-"]
+  doublet_method: none
+preprocessing:
+  target_sum: 10000
+  n_top_genes: 50
+  flavor: seurat
+  scale: false
+embedding:
+  n_pcs: 15
+  n_neighbors: 10
+  min_dist: 0.3
+  metric: euclidean
+clustering:
+  resolution: 0.6
+  key: leiden
+sensitivity:
+  min_genes: [0, 2]
+  n_top_genes: [40, 50]
+  resolutions: [0.4, 0.8]
+  seeds: [123]
+  combat_options: [false]
+  max_runs: 8

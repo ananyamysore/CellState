@@ -1,0 +1,38 @@
+# Starting point only. Review QC distributions for each study before interpreting results.
+dataset_key: dataset_id
+sample_key: sample_id
+donor_key: donor_id
+condition_key: condition
+batch_key: batch
+cell_type_key: cell_type
+seed: 42
+output_dir: cellstate-results
+qc:
+  min_genes: 200
+  max_genes: 7000
+  min_counts: 500
+  max_counts: null
+  max_mito_percent: 20
+  mito_prefixes: ["MT-", "mt-"]
+  doublet_method: none
+preprocessing:
+  target_sum: 10000
+  n_top_genes: 2000
+  flavor: seurat
+  scale: false
+  max_value: 10
+embedding:
+  n_pcs: 30
+  n_neighbors: 15
+  min_dist: 0.3
+  metric: euclidean
+clustering:
+  resolution: 0.8
+  key: leiden
+sensitivity:
+  min_genes: [150, 200, 300]
+  n_top_genes: [1500, 2000]
+  resolutions: [0.6, 0.8, 1.0]
+  seeds: [42, 43]
+  combat_options: [false, true]
+  max_runs: 72

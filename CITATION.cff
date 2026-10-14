@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use CellState, please cite the software version and the methods/software used in your study."
+title: "CellState: Cross-dataset single-cell RNA-seq analysis"
+version: 0.1.0
+date-released: 2026-10-13
+type: software
+authors:
+  - name: "CellState contributors"
+license: MIT
